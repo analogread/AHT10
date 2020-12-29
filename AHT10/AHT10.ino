@@ -61,14 +61,16 @@ void loop()
   if (readStatus != AHT10_ERROR)
   {
     if (state == true)
-    {Serial.print(F("Humidity\t\t"));
+    {
+    Serial.print(F("Humidity\t\t"));
     Serial.print(F("Temperature \n")); 
     state = false;
     }
     Temperature = myAHT10.readTemperature(AHT10_USE_READ_DATA);
     Humidity = myAHT10.readHumidity(AHT10_USE_READ_DATA);
-    Serial.print(Humidity); Serial.print(F(" +-0.3C\t\t"));
-    Serial.print(Temperature);    Serial.print(F(" +-2%"));
+    Serial.print(Humidity); Serial.print(F(" +-2%\t\t"));
+    Serial.print(" "); 
+    Serial.print(Temperature);  Serial.print(F(" +-0.3 C"));
 
 
     if (Temperature >= 30) {
